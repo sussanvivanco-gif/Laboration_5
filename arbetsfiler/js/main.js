@@ -22,6 +22,7 @@ const historySection = document.querySelector("#history");
 const deleteHistoryButton = document.querySelector("#delete");
 
 
+
 // Array som används för felmeddelanden
 let errors = [];
 
