@@ -115,6 +115,14 @@ function deleteHistory() {
 
 
 // Eventlyssnare
+    //Genererar studentkort
+form.addEventListener("submit", onSubmit);
+
+    //Rensa
+clearButton.addEventListenter("click", clearHistorySection);
+
+    //Rensa historik
+deleteHistoryButton.addEventListener("click", clearHistorySection);
 
 // När formuläret skickas:
 // - validera inmatningen
