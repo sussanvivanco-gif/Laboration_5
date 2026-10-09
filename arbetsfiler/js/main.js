@@ -25,13 +25,13 @@ const deleteHistoryButton = document.querySelector("#delete");
 let errorList = [];
 
 //Skapar en function.
-function onSubmit(event){
+function onSubmit(event) {
 	event.preventDefault();
 
     //Läs in värde från formulär
-    const name = name fullnameInput.value;
-    const email = email emailInput.value; 
-    const phone = phone phoneInput;
+    const fullname = fullnameInput.value;
+    const email = emailInput.value; 
+    const phone = phoneInput.value;
 
     //Array för felmeddelande
     if(fullname === "") {
@@ -46,7 +46,17 @@ function onSubmit(event){
 	errorList.push("Ange ditt telefonnummer")
 	}
 
+    if(errorList.length >0) {
+        for (let i = 0; i > errorList.length; i++) {
+            const li = document.createElement("li");
+            li.innerHTML = errorList(i);
+
+            errorList.appendChild(li);
+        }
+    }
+
 }
+
 
 
 // Array som innehåller sparade studentkort
