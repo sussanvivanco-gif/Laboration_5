@@ -21,10 +21,33 @@ const errorList = document.querySelector("#errorlist");
 const historySection = document.querySelector("#history");
 const deleteHistoryButton = document.querySelector("#delete");
 
-
-
 // Array som används för felmeddelanden
-let errors = [];
+let errorList = [];
+
+//Skapar en function.
+function onSubmit(event){
+	event.preventDefault();
+
+    //Läs in värde från formulär
+    const name = name fullnameInput.value;
+    const email = email emailInput.value; 
+    const phone = phone phoneInput;
+
+    //Array för felmeddelande
+    if(fullname === "") {
+	errorList.push("Ange ditt fullständiga namn");
+	}
+
+	if(email.length === 0){
+	errorList.push("Ange din e-postadress");
+	}
+	
+	if(phone.length === 0){
+	errorList.push("Ange ditt telefonnummer")
+	}
+
+}
+
 
 // Array som innehåller sparade studentkort
 let history = [];
