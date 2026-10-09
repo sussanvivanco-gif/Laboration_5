@@ -47,7 +47,7 @@ function onSubmit(event) {
 	}
 
     if(errorList.length >0) {
-        for (let i = 0; i > errorList.length; i++) {
+        for (let i = 0; i < errorList.length; i++) {
             const li = document.createElement("li");
             li.innerHTML = errorList(i);
 
