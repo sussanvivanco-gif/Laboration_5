@@ -35,15 +35,15 @@ function onSubmit(event) {
 
     //Array för felmeddelande
     if(fullname === "") {
-	errorList.push("Ange ditt fullständiga namn");
+	    errorList.push("Ange ditt fullständiga namn");
 	}
 
 	if(email.length === 0){
-	errorList.push("Ange din e-postadress");
+	    errorList.push("Ange din e-postadress");
 	}
 	
 	if(phone.length === 0){
-	errorList.push("Ange ditt telefonnummer")
+	    errorList.push("Ange ditt telefonnummer")
 	}
 
     if(errorList.length >0) {
@@ -152,10 +152,10 @@ function deleteHistory() {
 form.addEventListener("submit", onSubmit);
 
     //Rensa
-clearButton.addEventListenter("click", clearHistorySection);
+//--- gör synlig senare clearButton.addEventListenter("click", historySection);
 
     //Rensa historik
-deleteHistoryButton.addEventListener("click", clearHistorySection);
+//--- gör synlig senare  deleteHistoryButton.addEventListener("click", historySection);
 
 // När formuläret skickas:
 // - validera inmatningen
