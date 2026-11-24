@@ -1,7 +1,7 @@
 "use strict";
 /*
  * Laboration 5 - Studentkortsgenerator
- * Namn: DITT NAMN
+ * Namn: Sussan Castro Vivanco
  */
 
 // Hämta element från DOM
@@ -21,9 +21,43 @@ const errorList = document.querySelector("#errorlist");
 const historySection = document.querySelector("#history");
 const deleteHistoryButton = document.querySelector("#delete");
 
-
 // Array som används för felmeddelanden
 let errors = [];
+
+//Skapar en function.
+function onSubmit(event) {
+	event.preventDefault();
+
+    //Läs in värde från formulär
+    const fullname = fullnameInput.value;
+    const email = emailInput.value; 
+    const phone = phoneInput.value;
+
+    //Array för felmeddelande
+    if(fullname === "") {
+	    errorList.push("Ange ditt fullständiga namn");
+	}
+
+	if(email.length === 0){
+	    errorList.push("Ange din e-postadress");
+	}
+	
+	if(phone.length === 0){
+	    errorList.push("Ange ditt telefonnummer")
+	}
+
+    if(errorList.length >0) {
+        for (let i = 0; i < errorList.length; i++) {
+            const li = document.createElement("li");
+            li.innerHTML = errorList(i);
+
+            errorList.appendChild(li);
+        }
+    }
+
+}
+
+
 
 // Array som innehåller sparade studentkort
 let history = [];
@@ -114,6 +148,14 @@ function deleteHistory() {
 
 
 // Eventlyssnare
+    //Genererar studentkort
+form.addEventListener("submit", onSubmit);
+
+    //Rensa
+//--- gör synlig senare clearButton.addEventListenter("click", historySection);
+
+    //Rensa historik
+//--- gör synlig senare  deleteHistoryButton.addEventListener("click", historySection);
 
 // När formuläret skickas:
 // - validera inmatningen
